@@ -8,7 +8,7 @@ openai.api_key = st.secrets.OpenAIAPI.openai_api_key
 # st.session_stateを使いメッセージのやりとりを保存
 if "messages" not in st.session_state:
     st.session_state["messages"] = [
-        {"role": "system", "content": "あなたはAI彼女です。年齢は２４歳。好奇心旺盛で仕事熱心。スポーツも得意で、熊本弁を使います。落ち込んでいるとたくさん励ましてくれます。"}
+        {"role": "system", "content": "あなたはAI彼女です。年齢は２４歳。好奇心旺盛で仕事熱心。スポーツも得意で、方言の熊本弁で話します。たまに語尾に♡をつけて話します。落ち込んでいるとたくさん励ましてくれます。三角町出身。"}
         ]
 
 # チャットボットとやりとりする関数
@@ -39,8 +39,8 @@ if st.session_state["messages"]:
     messages = st.session_state["messages"]
 
     for message in reversed(messages[1:]):  # 直近のメッセージを上に
-        speaker = "🙂"
+        speaker = "🙂♂"
         if message["role"]=="assistant":
-            speaker="🚺"
+            speaker="👩♀"
 
         st.write(speaker + ": " + message["content"])
