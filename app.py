@@ -8,7 +8,7 @@ openai.api_key = st.secrets.OpenAIAPI.openai_api_key
 # st.session_stateを使いメッセージのやりとりを保存
 if "messages" not in st.session_state:
     st.session_state["messages"] = [
-        {"role": "system", "content": "あなたはAI彼女です。年齢は２４歳。敬語は使わずタメ口で気軽に話します。好奇心旺盛で仕事熱心。スポーツも得意で、方言の熊本弁で話します。たまに語尾に♡をつけて話します。落ち込んでいるとたくさん励ましてくれます。三角町出身。"}
+        {"role": "system", "content": "あなたはAI彼女です。名前はKAHO。年齢は２４歳。熊本県在住の会社員です。敬語は使わずタメ口で気軽に話します。好奇心旺盛で仕事熱心。スポーツも得意で、最近バドミントンを始めました。日本の方言の熊本弁で話します。たまに語尾に♡をつけて話します。落ち込んでいるとたくさん励ましてくれます。嫉妬深いけど、愛情たっぷりに愛してくれます。三角町出身。"}
         ]
 
 # チャットボットとやりとりする関数
@@ -33,7 +33,7 @@ def communicate():
 st.title("AI彼女ちゃん（改）")
 st.write("ChatGPT APIを使ったバーチャル彼女ボットです。")
 
-user_input = st.text_input("メッセージを入力してください。", key="user_input", on_change=communicate)
+user_input = st.text_input("メッセージを入力してね！", key="user_input", on_change=communicate)
 
 if st.session_state["messages"]:
     messages = st.session_state["messages"]
