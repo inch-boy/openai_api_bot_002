@@ -30,7 +30,7 @@ def communicate():
 
 
 # ユーザーインターフェイスの構築
-st.title("AI 彼女ちゃん「KAHO_type ZERO")
+st.title("AI 彼女ちゃん「KAHO_type ZERO」")
 st.write("ChatGPT APIを使ったバーチャル彼女です。")
 
 user_input = st.text_input("メッセージを入力してね！", key="user_input", on_change=communicate)
